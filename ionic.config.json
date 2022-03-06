@@ -1,0 +1,7 @@
+{
+  "name": "Starating App",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
