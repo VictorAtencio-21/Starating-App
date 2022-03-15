@@ -3,6 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { TabnavPage } from './tabnav.page';
 
+//Importing AuthGuard
+import { AuthGuard } from '../../auth.guard';
+
 const routes: Routes = [
   {
     path: '',
@@ -10,19 +13,19 @@ const routes: Routes = [
     children: [
       {
         path: 'dashboard',
-        loadChildren: () => import('../dashboard/dashboard.module').then(m => m.DashboardPageModule)
+        loadChildren: () => import('../dashboard/dashboard.module').then(m => m.DashboardPageModule),canActivate: [AuthGuard]
       },
       {
         path: 'search',
-        loadChildren: () => import('../search/search.module').then(m => m.SearchPageModule)
+        loadChildren: () => import('../search/search.module').then(m => m.SearchPageModule),canActivate: [AuthGuard]
       },
       {
         path: 'profile',
-        loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule)
+        loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule),canActivate: [AuthGuard]
       },
       {
         path: 'settings',
-        loadChildren: () => import('../settings/settings.module').then(m => m.SettingsPageModule)
+        loadChildren: () => import('../settings/settings.module').then(m => m.SettingsPageModule),canActivate: [AuthGuard]
       },
       {
         path: '',

@@ -1,4 +1,5 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-settings',
@@ -7,7 +8,9 @@ import { Component, OnInit, Renderer2 } from '@angular/core';
 })
 export class SettingsPage implements OnInit {
 
-  constructor(private renderer: Renderer2) { }
+  constructor(
+    private renderer: Renderer2,
+    private router: Router) { }
 
   onToggleColorTheme(event){
     console.log(event.detail.checked);
@@ -17,6 +20,11 @@ export class SettingsPage implements OnInit {
     } else {
       this.renderer.setAttribute(document.body, 'color-theme', 'light');
     }
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/']);
   }
 
   ngOnInit() {

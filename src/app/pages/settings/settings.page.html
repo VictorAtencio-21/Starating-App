@@ -1,4 +1,6 @@
+<ion-header>
 <h1 class="title">Ajustes</h1>
+</ion-header>
 
 <ion-content>
   <ion-grid fixed>
@@ -7,6 +9,7 @@
         <ion-label>Cambiar Tema</ion-label>
         <ion-toggle (ionChange)="onToggleColorTheme($event)"></ion-toggle>
       </ion-item>
+        <ion-button class="button" type="submit" color="danger" expand="block" (click)="logout()">Cerrar Sesión</ion-button>
     </ion-col>
   </ion-grid>
 </ion-content>

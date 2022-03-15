@@ -1,16 +1,27 @@
 .title {
+    text-align: center;
     font-size: 150%;
     font-family: helvetica;
-    padding-left: 20px;
-    padding-top: 25px;
 }
-
 .username {
-    font-size: 200%;
-    text-align: left;
-    padding-top: 10px;
+    text-align: center;
+    font-family: helvetica;
+    font-weight: bold;
 }
 
 .avatar {
-    text-align: center;
+    width: 100% !important;
+    height: 150% !important;
+    max-width: 100px !important;
+    max-height: 100px !important;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-container div{
+    padding-top: 15px;
+    margin: 5px;
 }
