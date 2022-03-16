@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'tabs',
     loadChildren: () => import('./pages/tabnav/tabnav.module').then( m => m.TabnavPageModule)
+  },
+  {
+    path: 'movie/:title',
+    loadChildren: () => import('./pages/movie/movie.module').then( m => m.MoviePageModule)
   }
 ];
 

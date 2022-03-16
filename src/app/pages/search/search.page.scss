@@ -3,3 +3,23 @@
     font-size: 150%;
     font-family: helvetica;
 }
+
+ion-thumbnail{
+    //--size: 120px; <- This for some reason doesn't work... Workaround:
+    height: 120px;
+    width: 120px;
+}
+
+.sinFiltro{
+    height: 350px;
+    width: 90%;
+    display: flex; 
+    outline: 10px double #15151e;
+    align-items: center;
+    margin: auto;
+}
+
+ion-icon{
+   font-size: 72px;
+   color: rgb(187, 145, 30);
+}

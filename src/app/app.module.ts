@@ -17,10 +17,13 @@ import { AuthGuard } from './auth.guard';
 //Importing Incerceptor
 import { TokenInterceptorService } from './services/token-interceptor.service';
 
+//Importing Filter Pipe ng2-search-filter
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, Ng2SearchPipeModule],
   providers: [
     AuthGuard,{
     provide:  RouteReuseStrategy,
