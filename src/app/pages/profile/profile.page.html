@@ -1,6 +1,13 @@
-<ion-header>
-  <h1 class="title">Tu Perfil</h1>
-</ion-header>
+<ion-toolbar>
+  <ion-buttons slot="primary">
+    <ion-button>
+      <ion-icon name="menu-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+  <ion-title>Mi Perfil</ion-title>
+</ion-toolbar>
+
 
 <ion-content>
   <div class="flex-container">
@@ -8,16 +15,67 @@
       <ion-avatar class="avatar">
         <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/the-batman-2-fecha-de-estreno-1646321733.jpg">
       </ion-avatar>
-      <p class="username">Username</p>
     </div>
   </div>
+  <div class="userCard">
+    <ion-card>
+      <ion-card-title class="ion-text-center">Nombre De Usuario</ion-card-title>
+      <ion-card-subtitle class="ion-text-center">Nombre Apellido</ion-card-subtitle>
+      <ion-card-content class="ion-text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ultricies augue mauris, accumsan sollicitudin risus rutrum at. Quisque sit amet hendrerit metus.</ion-card-content>
+    </ion-card>
+  </div>
 
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <p>Nombre</p>
-        <p>Email</p>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+
+  <ion-list>
+    <ion-list-header>Peliculas Favoritas</ion-list-header>
+
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="https://lanoticia.com/wp-content/uploads/2022/03/batman-robert-pattinson-promo-images-dc-fandome.jpg" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>The Batman</h2>
+        <h3>Genero: Superheroes</h3>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="https://static.invenglobal.com/upload/image/2021/04/10/i1618094189754080.jpeg" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Mario Movie</h2>
+        <h3>Genero: Videojuegos</h3>
+      </ion-label>
+    </ion-item>
+
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>Calificadas Recientemente</ion-list-header>
+
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="https://lanoticia.com/wp-content/uploads/2022/03/batman-robert-pattinson-promo-images-dc-fandome.jpg" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>The Batman</h2>
+        <h3>Genero: Superheroes</h3>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <img src="https://static.invenglobal.com/upload/image/2021/04/10/i1618094189754080.jpeg" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>Mario Movie</h2>
+        <h3>Genero: Videojuegos</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

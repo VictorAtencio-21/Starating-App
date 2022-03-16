@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-types */
+/* eslint-disable @typescript-eslint/quotes */
 import { Component, OnInit } from '@angular/core';
 //import { HttpClient } from "@angular/common/http";
 import { ActivatedRoute } from "@angular/router";
@@ -16,7 +18,7 @@ export class MoviePage implements OnInit {
     genre: "Superheroes",
     rating: "7/10",
     photos: "https://lanoticia.com/wp-content/uploads/2022/03/batman-robert-pattinson-promo-images-dc-fandome.jpg"
-  }
+  };
 
   constructor(
     //private http: HttpClient,

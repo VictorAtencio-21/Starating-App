@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/quotes */
+/* eslint-disable @typescript-eslint/ban-types */
 import { Component, OnInit } from '@angular/core';
 //import { HttpClient } from '@angular/common/http';
 
@@ -20,9 +22,9 @@ export class SearchPage implements OnInit {
     title: "Mario Movie",
     genre: "Videogames",
     rating: "2/10",
-    photos: "https://static.invenglobal.com/upload/image/2021/04/10/i1618094189754080.jpeg" 
+    photos: "https://static.invenglobal.com/upload/image/2021/04/10/i1618094189754080.jpeg"
   }
-]
+];
 constructor(
   //private http: HttpClient
 ) { }
