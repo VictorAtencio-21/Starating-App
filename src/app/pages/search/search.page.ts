@@ -10,8 +10,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPage implements OnInit {
 
-  key: String;
   searchTerm: String;
+  //movies
   movies = [{
     title: "Batman",
     genre: "Superheroes",

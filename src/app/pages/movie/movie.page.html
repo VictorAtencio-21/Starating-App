@@ -24,8 +24,32 @@
             <ion-card-content>
               <ion-label><span style="font-weight: bold;">GÉNERO: </span> {{movie.genre}}</ion-label><br>
               <ion-label><span style="font-weight: bold;">RATING: </span> {{movie.rating}}</ion-label>
+              <ion-icon style="height: 22px; width: 22px; padding-left: 5px; color: rgb(0, 0, 80);" name="thumbs-up-outline"></ion-icon>
             </ion-card-content>
           </ion-card>
+          <h3>Comments:</h3>  
+          <ion-list>
+            <ion-item *ngFor="let comment of comments">
+              <ion-list>
+                <ion-item>
+                  <ion-label> <span style="color: rgb(0, 65, 161); font-weight: bold;">{{comment.User}}</span> dijo a las {{comment.Date}}:</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-text>
+                    <h6 style="text-align: justify;">{{comment.Content}}</h6>
+                  </ion-text>
+                </ion-item>
+                <ion-item>
+                  <ion-icon style="color: rgb(0, 0, 80);" name="thumbs-up-outline"></ion-icon>
+                  <ion-label style="padding-left: 10px;">Likes: {{comment.Likes}}</ion-label>
+                  <div *ngIf="comment.rep">
+                    <a [routerLink]="['/comment/' + comment._id]">Replies &#8680;</a>
+                  </div>
+                </ion-item>
+              </ion-list>
+              <br><br><br>
+            </ion-item>
+          </ion-list>
         </div>
       </ion-col>
     </ion-row>

@@ -26,7 +26,12 @@ const routes: Routes = [
   {
     path: 'movie/:title',
     loadChildren: () => import('./pages/movie/movie.module').then( m => m.MoviePageModule)
+  },
+  {
+    path: 'comment/:id',
+    loadChildren: () => import('./pages/comment/comment.module').then( m => m.CommentPageModule)
   }
+
 ];
 
 @NgModule({
