@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MovieServiceService {
 
-  private URL = 'http://localhost:2000/';
+  private URL = 'https://starating-api.herokuapp.com/';
 
   constructor(private http: HttpClient) { }
 
