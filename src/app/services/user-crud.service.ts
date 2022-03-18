@@ -26,7 +26,7 @@ export class UserCrudService {
   };
 
   //url de la api
-  private URL = 'http://localhost:2000/';
+  private URL = 'https://starating-api.herokuapp.com/';
 
   constructor(
     private httpClient: HttpClient,
