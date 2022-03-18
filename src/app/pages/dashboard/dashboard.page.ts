@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieServiceService } from '../../services/movie-service.service';
+import { MoviePage } from '../movie/movie.page';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardPage implements OnInit {
 
-  constructor() { }
+  moviesArray: Array<any> = [];
+
+  constructor(
+    public json: MovieServiceService) { }
 
   ngOnInit() {
+    this.json.getMovies().subscribe((data: any) => {
+      this.moviesArray = data as any [];
+    });
   }
 
 }

@@ -1,7 +1,9 @@
 /* eslint-disable @typescript-eslint/quotes */
 /* eslint-disable @typescript-eslint/ban-types */
 import { Component, OnInit } from '@angular/core';
-//import { HttpClient } from '@angular/common/http';
+
+//Import Movie Service
+import { MovieServiceService } from '../../services/movie-service.service';
 
 @Component({
   selector: 'app-search',
@@ -10,8 +12,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPage implements OnInit {
 
+  key: String;
   searchTerm: String;
-  //movies
   movies = [{
     title: "Batman",
     genre: "Superheroes",

@@ -2,9 +2,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Injectable } from '@angular/core';
 
-import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { URL } from 'url';
 
 export class User {
   _id: number;
@@ -32,13 +33,12 @@ export class UserCrudService {
     private router: Router) { }
 
   signupUser(user: User): Observable<any> {
-    return this.httpClient.post<User>('http://localhost:2000/register', user);
+    return this.httpClient.post<User>(this.URL+'register', user);
   }
 
   signinUser(user: User): Observable<any>{
-    return this.httpClient.post<User>('http://localhost:2000/login', user);
+    return this.httpClient.post<User>(this.URL+'login', user);
    }
-
 
   loggedIn() {
     return !!localStorage.getItem('token');
@@ -51,5 +51,9 @@ export class UserCrudService {
 
   getToken() {
     return localStorage.getItem('token');
+  }
+
+  getUserJson(url: string){
+    return this.httpClient.get(url);
   }
 }
