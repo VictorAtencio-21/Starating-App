@@ -10,23 +10,23 @@
 
 
 <ion-content>
-  <div class="flex-container">
-    <div>
-      <ion-avatar class="avatar">
-        <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/the-batman-2-fecha-de-estreno-1646321733.jpg">
-      </ion-avatar>
-    </div>
-  </div>
-  <div class="userCard">
-    <ion-card>
-      <ion-card-title class="ion-text-center">Nombre De Usuario</ion-card-title>
-      <ion-card-subtitle class="ion-text-center">Nombre Apellido</ion-card-subtitle>
-    </ion-card>
-  </div>
-
-  <ion-toolbar>
-    <ion-title></ion-title>
-  </ion-toolbar>
+  <ion-list>
+    <ion-item *ngFor="let user of currentUser">
+      <div class="flex-container">
+        <div>
+          <ion-avatar class="avatar">
+            <img [src]="user.photo">
+          </ion-avatar>
+        </div>
+      </div>
+      <div class="userCard">
+        <ion-card>
+          <ion-card-title class="ion-text-center">{{user.username}}</ion-card-title>
+          <ion-card-subtitle class="ion-text-center">{{user.name}} {{user.lastname}}</ion-card-subtitle>
+        </ion-card>
+      </div>
+    </ion-item>
+  </ion-list>
 
   <ion-list>
     <ion-list-header>Peliculas Favoritas</ion-list-header>

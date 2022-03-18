@@ -24,8 +24,52 @@
             <ion-card-content>
               <ion-label><span style="font-weight: bold;">GÉNERO: </span> {{movies.genre}}</ion-label><br>
               <ion-label><span style="font-weight: bold;">RATING: </span> {{movies.rating}}</ion-label>
+              <button ion-button icon-only  (click)="sendLikeToMovie(movies._id)" style="background-color: transparent;">
+                <ion-icon style="height: 22px; width: 22px; padding-left: 5px; color: rgb(0, 65, 161);" name="thumbs-up-outline"></ion-icon>
+              </button>
             </ion-card-content>
           </ion-card>
+        </div>
+
+          <div class="div-formulario">
+            <form [formGroup]="commentForm" (ngSubmit)="comment()">
+              <div class="form">
+              <h4>Añada su comentario</h4>
+              <ion-item lines="full">
+                <ion-input placeholder="Escriba aquí!" formControlName="Content" type="textarea" required></ion-input>
+              </ion-item>
+              <ion-item lines="full">
+                <ion-button type="submit" color="success" expand="block">Enviar</ion-button>
+              </ion-item>
+            </div>
+            </form>
+          </div>
+
+          <div *ngIf="hasComments">
+          <ion-list>
+            <ion-list-header style="font-weight: bold; font-size: large;">Comentarios: </ion-list-header>
+            <ion-item *ngFor="let comment of comments">
+              <ion-list>
+                <ion-item>
+                  <ion-label> <span style="color: rgb(0, 65, 161); font-weight: bold;">{{comment.User}}</span> dijo a las {{comment.Date}}:</ion-label>
+                </ion-item>
+                <ion-item>
+                  <ion-text>
+                    <h6 style="text-align: justify;">{{comment.Content}}</h6>
+                  </ion-text>
+                </ion-item>
+                <ion-item>
+                  <button ion-button icon-only  (click)="sendLikeToComment(comment._id)" style="background-color: transparent;">
+                    <ion-icon style="height: 20px; width: 20px; color: rgb(0, 65, 161);" name="thumbs-up-outline"></ion-icon>
+                  </button>
+                  <ion-label style="padding-left: 10px;">Likes: {{comment.Likes}}</ion-label>
+                  <div *ngIf="comment.rep">
+                    <a [routerLink]="['/comment/' + comment._id]">Replies &#8680;</a>
+                  </div>
+                </ion-item>
+              </ion-list>
+            </ion-item>
+          </ion-list>
         </div>
       </ion-col>
     </ion-row>

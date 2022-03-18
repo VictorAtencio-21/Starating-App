@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/quotes */
 /* eslint-disable @typescript-eslint/ban-types */
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 //Import Movie Service
@@ -14,32 +15,19 @@ export class SearchPage implements OnInit {
 
   key: String;
   searchTerm: String;
-  movies = [{
-    title: "Batman",
-    genre: "Superheroes",
-    rating: "7/10",
-    photos: "https://lanoticia.com/wp-content/uploads/2022/03/batman-robert-pattinson-promo-images-dc-fandome.jpg"
-  },
-  {
-    title: "Mario Movie",
-    genre: "Videogames",
-    rating: "2/10",
-    photos: "https://static.invenglobal.com/upload/image/2021/04/10/i1618094189754080.jpeg"
-  }
-];
+  movies = [{}];
 constructor(
-  //private http: HttpClient
+  private http: HttpClient
 ) { }
 
   ngOnInit() {
-    /*
+    
     this.http
-    .get<any>("http://localhost:2000/home")
+    .get<any>("https://starating-api.herokuapp.com/allMovies")
     .subscribe((res) => {
       console.log(res)
       this.movies = res;
     });
-    */
   }
 
 }

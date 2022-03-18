@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProfilePage implements OnInit {
 
-  currentUser: Object = {};
+  currentUser: Array<any> = [];
 
   constructor(
     private modalCtrl: ModalController,
@@ -36,6 +36,10 @@ export class ProfilePage implements OnInit {
     }
 
   ngOnInit() {
+    let id = this.actRoute.snapshot.paramMap.get('id');
+    this.auth.getUserProfile(id).subscribe((res: any) => {
+      this.currentUser = res.msg;
+    });
   }
 
 }

@@ -11,7 +11,7 @@
         <ion-list *ngIf="searchTerm">
           <ion-item *ngFor="let movie of movies | filter:searchTerm" [routerLink]="['/movie/' + movie.title]">
             <ion-thumbnail slot="start">
-              <img src="{{movie.photos}}">
+              <img src="{{movie.poster}}">
             </ion-thumbnail>
             <ion-list>
               <ion-item lines="none">
@@ -21,7 +21,7 @@
                 <ion-label>{{movie.genre}}</ion-label>
               </ion-item>
               <ion-item lines="none">
-                <ion-label>{{movie.rating}}</ion-label>
+                <ion-label><span style="font-weight: bold; color: rgb(85, 85, 85);">RATING:</span> {{movie.rating}}</ion-label>
               </ion-item>
             </ion-list>
             <br><br><br>
