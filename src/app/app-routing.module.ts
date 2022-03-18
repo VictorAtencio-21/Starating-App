@@ -26,10 +26,13 @@ const routes: Routes = [
   {
     path: 'movie/:title',
     loadChildren: () => import('./pages/movie/movie.module').then( m => m.MoviePageModule)
+  },  {
+    path: 'profile-modal',
+    loadChildren: () => import('./pages/profile-modal/profile-modal.module').then( m => m.ProfileModalPageModule)
   },
   {
-    path: 'comment/:id',
-    loadChildren: () => import('./pages/comment/comment.module').then( m => m.CommentPageModule)
+    path: 'profile-edit',
+    loadChildren: () => import('./pages/profile-edit/profile-edit.module').then( m => m.ProfileEditPageModule)
   }
 
 ];
