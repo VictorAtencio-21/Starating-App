@@ -1,7 +1,10 @@
+/* eslint-disable prefer-const */
+/* eslint-disable @typescript-eslint/ban-types */
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ProfileModalPage } from '../profile-modal/profile-modal.page';
 import { UserCrudService } from '../../services/user-crud.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -10,12 +13,16 @@ import { UserCrudService } from '../../services/user-crud.service';
 })
 export class ProfilePage implements OnInit {
 
+  currentUser: Object = {};
+
   constructor(
     private modalCtrl: ModalController,
-    public json: UserCrudService
+    public auth: UserCrudService,
+    private actRoute: ActivatedRoute
     ) {
-      this.json.getUserJson('http://localhost:2000/getUsers').subscribe((res: any) => {
-        console.log(res);
+      let id = this.actRoute.snapshot.paramMap.get('id');
+      this.auth.getUserProfile(id).subscribe((res: any) => {
+        this.currentUser = res.msg;
       });
     }
 

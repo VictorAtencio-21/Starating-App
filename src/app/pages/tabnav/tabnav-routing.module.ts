@@ -20,7 +20,7 @@ const routes: Routes = [
         loadChildren: () => import('../search/search.module').then(m => m.SearchPageModule),canActivate: [AuthGuard]
       },
       {
-        path: 'profile',
+        path: 'profile/:id',
         loadChildren: () => import('../profile/profile.module').then(m => m.ProfilePageModule),canActivate: [AuthGuard]
       },
       {

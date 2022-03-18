@@ -1,3 +1,5 @@
+/* eslint-disable prefer-const */
+/* eslint-disable arrow-body-style */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Injectable } from '@angular/core';
@@ -5,7 +7,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { URL } from 'url';
+import { catchError, map } from 'rxjs/operators';
+
 
 export class User {
   _id: number;
@@ -21,9 +24,7 @@ export class User {
 })
 export class UserCrudService {
 
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
+  headers = new HttpHeaders().set('Content-Type', 'application/json');
 
   //url de la api
   private URL = 'https://starating-api.herokuapp.com/';
@@ -53,7 +54,12 @@ export class UserCrudService {
     return localStorage.getItem('token');
   }
 
-  getUserJson(url: string){
-    return this.httpClient.get(url);
+  getUserProfile(id: any): Observable<any> {
+    let api = `${this.URL}user/${id}`;
+    return this.httpClient.get(api, { headers: this.headers }).pipe(
+      map((res) => {
+        return res || {};
+      }),
+    );
   }
 }
