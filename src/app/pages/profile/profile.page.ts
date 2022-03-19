@@ -5,6 +5,7 @@ import { ModalController } from '@ionic/angular';
 import { ProfileModalPage } from '../profile-modal/profile-modal.page';
 import { UserCrudService } from '../../services/user-crud.service';
 import { ActivatedRoute } from '@angular/router';
+import { Global } from 'src/app/global';
 
 @Component({
   selector: 'app-profile',
@@ -13,7 +14,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProfilePage implements OnInit {
 
-  currentUser: Array<any> = [];
+  currentUser = {
+
+  }
 
   constructor(
     private modalCtrl: ModalController,
@@ -36,10 +39,7 @@ export class ProfilePage implements OnInit {
     }
 
   ngOnInit() {
-    let id = this.actRoute.snapshot.paramMap.get('id');
-    this.auth.getUserProfile(id).subscribe((res: any) => {
-      this.currentUser = res.msg;
-    });
+    this.currentUser = Global.getUser();
   }
 
 }

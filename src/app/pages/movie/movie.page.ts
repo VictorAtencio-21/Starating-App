@@ -80,7 +80,10 @@ export class MoviePage implements OnInit {
   }
   
   comment(){
+    this.commentForm.value.User = Global.getUser().username;
     this.commentForm.value.Movie = this.movieTitle;
+    this.commentForm.value.Date = Date.now();
+
     console.log(this.commentForm.value);
     if (!this.commentForm.valid) {
       return false;

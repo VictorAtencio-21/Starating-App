@@ -1,6 +1,9 @@
 export class Global {
     public static userEmail: String;
-    public static userData: Object;
+    public static userToken: String;
+    public static userData: {
+        username: String
+    };
 
     /**
      * getEmail
@@ -16,16 +19,30 @@ export class Global {
         this.userEmail = email;
         return this.userEmail;
     }
+    /**
+     * getToken
+     */
+    public static getToken() {
+        return this.userToken;
+    }
 
     /**
-     * getEmail
+     * setToken
+     */
+    public static setToken(token) {
+        this.userToken = token;
+        return this.userToken;
+    }
+
+    /**
+     * getuserData
      */
     public static getUser() {
         return this.userData;
     }
 
     /**
-     * setEmail
+     * setUserData
      */
     public static setUser(data) {
         this.userData = data;

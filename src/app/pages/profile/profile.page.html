@@ -11,18 +11,18 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let user of currentUser">
+    <ion-item>
       <div class="flex-container">
         <div>
           <ion-avatar class="avatar">
-            <img [src]="user.photo">
+            <img [src]="currentUser.photo">
           </ion-avatar>
         </div>
       </div>
       <div class="userCard">
         <ion-card>
-          <ion-card-title class="ion-text-center">{{user.username}}</ion-card-title>
-          <ion-card-subtitle class="ion-text-center">{{user.name}} {{user.lastname}}</ion-card-subtitle>
+          <ion-card-title class="ion-text-center">{{currentUser.username}}</ion-card-title>
+          <ion-card-subtitle class="ion-text-center">{{currentUser.name}} {{currentUser.lastname}}</ion-card-subtitle>
         </ion-card>
       </div>
     </ion-item>

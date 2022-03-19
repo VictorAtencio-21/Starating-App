@@ -54,8 +54,12 @@ export class UserCrudService {
     return localStorage.getItem('token');
   }
 
-  getUserProfile(id: any): Observable<any> {
-    let api = `${this.URL}user/${id}`;
+  getUserData(email) {
+    return this.httpClient.get(this.URL+'user/' + email);
+  }
+
+  getUserProfile(email: any): Observable<any> {
+    let api = `${this.URL}user/${email}`;
     return this.httpClient.get(api, { headers: this.headers }).pipe(
       map((res) => {
         return res || {};
